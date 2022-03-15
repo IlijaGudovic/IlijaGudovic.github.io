@@ -15,7 +15,7 @@
             text-decoration: none;
             list-style: none;
             font-weight:normal;
-            
+            color: var(--color-grey);
         }
 
         :root
@@ -40,7 +40,295 @@
             src: url("fonts/bosca-light.ttf");
         }
 
-        
+        nav
+        {
+
+            background: var(--color-pink);
+
+            width: 100%;
+            height: 60px;
+
+            margin-top: 20px;
+
+        }
+
+        /* ...HEADER... */
+
+        header
+        {
+
+            height: 100vh;
+            margin: calc(1.2vw + 14px);
+
+            background: url(./images/bg_img_header.png);
+            background-repeat: no-repeat;
+
+            background-position: center left 35%;
+            background-size: auto 100%;
+
+        }
+
+        @media screen and (max-width: 800px)
+        {
+            header
+            {
+                height: 76vh;
+                background-size: cover;
+            }
+        }
+
+        /* ...INTRO... */
+
+        .intro
+        {
+
+            height: 100vh;
+
+            background-image: url("images/bg_img_intro.png");
+            background-repeat: no-repeat;
+            background-position: center left 20%;
+            background-size: cover, auto;
+
+            margin: calc(1.2vw + 14px);
+            margin-top: 0;
+
+        }
+
+        .intro h2
+        {
+
+            position: relative;
+
+            width: 70%;
+            top: 15%;
+            left: 30%;
+            
+        }
+
+        .intro span
+        {
+            font-family: blackstory-script;
+            font-size: max(16vw, 140pt);
+        }
+
+        .intro div
+        {
+
+            height: 40%;
+            width: 40%;
+
+            position: relative;
+            left: 50%;
+            top: 10%;
+
+            margin-top: 2vh;
+
+        }
+
+        .intro p
+        {
+
+            font-size: min(1vw + 1rem , 18pt);
+
+        }
+
+        /* --- SERVICE --- */
+
+        .service
+        {
+
+            background: var(--color-pink);
+
+            margin: calc(1.2vw + 14px);
+        }
+
+        .service .title
+        {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: 86%;
+            margin: auto;
+            top: 40px;
+            margin-bottom: calc(3.2vw + 64px);
+        }
+
+        .service .title img
+        {
+            width: max(16%, 160px);
+            margin-left: 2vh;
+            margin-right: 2vh;
+        }
+
+        .service .title div
+        {
+            margin: auto;
+            height: 2px;
+            background: var(--color-dark-pink);
+            width: 100%;
+            filter: blur(0px);
+        }
+
+        .service .grid
+        {
+
+            margin-top: 50px;
+
+            display: grid;
+            grid-gap: 16px;
+
+            grid-template-columns: repeat(5, 1fr);
+
+        }
+
+        @media screen and (max-width: 1200px)
+        {
+            .service .grid
+            {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (orientation: portrait)
+        {
+            .service .grid
+            {
+                grid-gap: 42px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+        }
+
+        .service .option img
+        {
+
+            display: block;
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+
+            margin-bottom: calc(5vw + 10px);
+
+        }
+
+        @media screen and (max-width: 1200px)
+        {
+            .service .option img
+            {
+                width: 40%;
+            }
+        }
+
+        @media (orientation: portrait)
+        {
+            .service .option img
+            {
+                width: 40%;
+            }
+
+            .service .option img
+            {
+                margin-bottom: 16px;
+            }
+
+            .service .option p::after
+            {
+                content: "See more!";
+
+                position: relative;
+                text-align: center;
+                display: block;
+                align-items: center;
+
+                color: var(--color-dark-pink);
+                text-decoration: underline;
+
+            }
+        }
+
+        .service .option
+        {
+           text-align: center;
+           /* background: rgba(255, 255, 255, 0.3); */
+           border-radius: 6%;
+        }
+
+        .service .option a
+        {
+            color: var(--color-grey);
+        }
+
+        .service .option h2
+        {
+            font-size: min(2vw + 2rem, 38pt);
+            margin-bottom: max(1.4vw, 10px);
+            color: var(--color-dark-pink);
+        }
+
+        .service .option p
+        {
+            font-size: min(1vw + 1rem , 18pt);
+            width: 80%;
+            margin: auto;
+        }
+
+        .service .line
+        {
+            height: 2px;
+            background: var(--color-dark-pink);
+            margin: auto;
+            width: 86%;
+
+            position: relative;
+            margin-top: max(6vw, 50px);
+            bottom: max(2vw, 16px);
+        }
+
+         /* --- ABOUTE --- */
+
+         .aboute
+        {
+
+
+            background: url("images/bg_img_about.png");
+            background-repeat: no-repeat;
+
+            background-position: left 20.8% center;
+            background-size: cover, auto;
+
+            height: 100vh;
+
+            margin: calc(1.2vw + 14px);
+
+            text-align: center;
+            color: var(--color-grey);
+
+        }
+
+        .aboute h2
+        {
+
+            font-family: blackstory-script;
+            font-size: max(10vw, 84pt);
+
+            padding-top: calc(35vh - 14vw); 
+            /* 40px */
+            margin-bottom: max(6%, 10px);
+            /* 100px */
+
+        }
+
+        .aboute p
+        {
+            font-family: bosaca-script;
+            font-size: max(2vw, 14pt);
+            width: 60%;
+            margin: auto;
+        }
+
+        /* ...GALLLERY... */
+
         .gallery
         {
             height: 100vh;
@@ -153,11 +441,106 @@
             text-transform: uppercase;
         }
 
+
     </style>
 
 </head>
-
 <body>
+
+    <nav>
+
+    </nav>
+
+    <header>
+
+    </header>
+
+    <section class="intro">
+
+        <h2> <span>Hello</span> everyone,</h2>
+
+        <div>
+
+            <br>
+            <p>I will be happy to make your logo :)</p>
+            <br>
+            <p>Your logo will probably be the first thing your customers see, so let's make it be the first thing they remember!</p>
+            <br>
+            <p>I'm available for new projects!</p>
+            <br>
+
+        </div>
+
+    </section>
+
+    <section class="service">
+
+        <div class="title">
+
+            <div></div>
+            <img src="./images/text_service.png" alt="Title-img">
+            <div></div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="option">
+                
+                <img src="./images/services_icons/icon_01.png" alt="service-option-img">
+                <a href="#"> <h2>Brand</h2></a>
+                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
+
+            </div>
+
+            <div class="option">
+                
+                <img src="./images/services_icons/icon_02.png" alt="service-option-img">
+                <a href="#"> <h2>Logo</h2></a>
+                <a href="#"> <p>You will get a logo based on your ideas and visions, or freshen up your old design!</p></a>
+                
+            </div>
+
+            <div class="option">
+                
+                <img src="./images/services_icons/icon_03.png" alt="service-option-img">
+                <a href="#"> <h2>Template</h2></a>
+                <a href="#"> <p>Vectors, Stickers and little illustrations originaly designed for you to use or print!</p></a>
+                
+            </div>
+
+            <div class="option">
+                
+                <img src="./images/services_icons/icon_04.png" alt="service-option-img">
+                <a href="#"> <h2>Cards</h2></a>
+                <a href="#"> <p>Here you can find buisiness, inivation, greeting, or any other cards that you need!</p></a>
+                
+            </div>
+
+            <div class="option">
+                
+                <img src="./images/services_icons/icon_05.png" alt="service-option-img">
+                <a href="#"> <h2>Package</h2></a>
+                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
+                
+            </div>
+
+        </div>
+
+        <div class="line"></div>
+
+    </section>
+
+    <section class="aboute">
+
+        <h2>Aboute</h2>
+
+        <p>I'm 30 years old based in Miami Beach, FL </p>
+        <p>I graduated in Electrical Engineering, but as I always had passion for art, I ended up following my dreams and doing design instead! </p>
+
+    </section>
+
+    <!-- GALLERY -->
 
     <section class="gallery">
 
@@ -222,6 +605,8 @@
         </div>
 
     </section>
+
+    
     
 </body>
 </html>
