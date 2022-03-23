@@ -15,7 +15,7 @@
             text-decoration: none;
             list-style: none;
             font-weight:normal;
-            color: var(--color-grey);
+            
         }
 
         :root
@@ -40,34 +40,6 @@
             src: url("fonts/bosca-light.ttf");
         }
 
-        nav
-        {
-
-            background: var(--color-pink);
-
-            width: 100%;
-            height: 60px;
-
-            margin-top: 20px;
-
-        }
-
-        /* ...HEADER... */
-
-        header
-        {
-
-            height: 100vh;
-            margin: calc(1.2vw + 14px);
-
-            background: url(./images/bg_img_header.png);
-            background-repeat: no-repeat;
-
-            background-position: center left 35%;
-            background-size: auto 100%;
-
-        }
-
         @media screen and (max-width: 800px)
         {
             header
@@ -76,8 +48,6 @@
                 background-size: cover;
             }
         }
-
-        /* ...INTRO... */
 
         .intro
         {
@@ -91,522 +61,149 @@
 
             margin: calc(1.2vw + 14px);
             margin-top: 0;
+            margin-bottom: 0;
+
+            display: flex;
+            flex-direction: column;
+            
+            /* overflow: hidden; */
+
+            color: var(--color-grey);
+
 
         }
+
 
         .intro h2
         {
 
-            position: relative;
+            font-family: blackstory-script;
+            font-size: 16rem;
 
-            width: 70%;
-            top: 15%;
-            left: 30%;
-            
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            margin-top: 200px;
+            margin-left: -132px;
+
         }
 
-        .intro span
+        .intro h3
         {
-            font-family: blackstory-script;
-            font-size: max(16vw, 140pt);
+
+            font-size: 3rem;
+
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            margin-top: 296px;
+            margin-left: 146px;
+
         }
 
         .intro div
         {
 
-            height: 40%;
+            margin-top: 24rem;
+
+            font-size: 2rem;
+
+            /* background-color: bisque; */
+
+            position: relative;
+            left: 50%;
             width: 40%;
 
-            position: relative;
-            left: 50%;
-            top: 10%;
-
-            margin-top: 2vh;
+            line-height: 1.2;
 
         }
 
-        .intro p
+
+        @media screen and (max-width: 1000px)
         {
-
-            font-size: min(1vw + 1rem , 18pt);
-
-        }
-
-        /* --- SERVICE --- */
-
-        .service
-        {
-
-            background: var(--color-pink);
-
-            margin: calc(1.2vw + 14px);
-        }
-
-        .service .title
-        {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            width: 86%;
-            margin: auto;
-            top: 40px;
-            margin-bottom: calc(3.2vw + 64px);
-        }
-
-        .service .title img
-        {
-            width: max(16%, 160px);
-            margin-left: 2vh;
-            margin-right: 2vh;
-        }
-
-        .service .title div
-        {
-            margin: auto;
-            height: 2px;
-            background: var(--color-dark-pink);
-            width: 100%;
-            filter: blur(0px);
-        }
-
-        .service .grid
-        {
-
-            margin-top: 50px;
-
-            display: grid;
-            grid-gap: 16px;
-
-            grid-template-columns: repeat(5, 1fr);
-
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .service .grid
+            
+            .intro h2
             {
-                grid-template-columns: repeat(2, 1fr);
+                margin-top: 13vh;
             }
-        }
-
-        @media (orientation: portrait)
-        {
-            .service .grid
+           
+            .intro h3
             {
-                grid-gap: 42px;
-                grid-template-columns: repeat(1, 1fr);
+                margin-top: 23.4vh;
+            }
+
+            .intro div
+            {
+
+                font-size: 1.8rem;
+                left: 40%;
+                width: 50%;
+
             }
 
         }
-
-        .service .option img
+        
+        @media screen and (max-width: 800px)
         {
 
-            display: block;
-
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-
-            margin-bottom: calc(5vw + 10px);
-
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .service .option img
+            .intro h2
             {
-                width: 40%;
-            }
-        }
+                font-size: 6rem;
 
-        @media (orientation: portrait)
-        {
-            .service .option img
-            {
-                width: 40%;
+                margin-top: 9vh;
+                margin-left: -44px;
             }
 
-            .service .option img
+            .intro h3
             {
-                margin-bottom: 16px;
+                font-size: 1.6rem;
+
+                margin-top: 12.2vh;
+                margin-left: 84px;
             }
 
-            .service .option p::after
+            .intro div
             {
-                content: "See more!";
 
-                position: relative;
-                text-align: center;
-                display: block;
-                align-items: center;
+                margin-top: 208px;
+                margin-top: 22.5vh;
+                text-align: justify;
+                text-align-last: center;
 
-                color: var(--color-dark-pink);
-                text-decoration: underline;
+                font-size: 1.5rem;
+
+                width: 80%;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
 
             }
         }
-
-        .service .option
-        {
-           text-align: center;
-           /* background: rgba(255, 255, 255, 0.3); */
-           border-radius: 6%;
-        }
-
-        .service .option a
-        {
-            color: var(--color-grey);
-        }
-
-        .service .option h2
-        {
-            font-size: min(2vw + 2rem, 38pt);
-            margin-bottom: max(1.4vw, 10px);
-            color: var(--color-dark-pink);
-        }
-
-        .service .option p
-        {
-            font-size: min(1vw + 1rem , 18pt);
-            width: 80%;
-            margin: auto;
-        }
-
-        .service .line
-        {
-            height: 2px;
-            background: var(--color-dark-pink);
-            margin: auto;
-            width: 86%;
-
-            position: relative;
-            margin-top: max(6vw, 50px);
-            bottom: max(2vw, 16px);
-        }
-
-         /* --- ABOUTE --- */
-
-         .aboute
-        {
-
-
-            background: url("images/bg_img_about.png");
-            background-repeat: no-repeat;
-
-            background-position: left 20.8% center;
-            background-size: cover, auto;
-
-            height: 100vh;
-
-            margin: calc(1.2vw + 14px);
-
-            text-align: center;
-            color: var(--color-grey);
-
-        }
-
-        .aboute h2
-        {
-
-            font-family: blackstory-script;
-            font-size: max(10vw, 84pt);
-
-            padding-top: calc(35vh - 14vw); 
-            /* 40px */
-            margin-bottom: max(6%, 10px);
-            /* 100px */
-
-        }
-
-        .aboute p
-        {
-            font-family: bosaca-script;
-            font-size: max(2vw, 14pt);
-            width: 60%;
-            margin: auto;
-        }
-
-        /* ...GALLLERY... */
-
-        .gallery
-        {
-            height: 100vh;
-            background: url(./images/bg_img_galery.png) , var(--color-pink);
-
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: 100% auto;
-
-            /* margin: var(--offset); */
-
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        .gallery h2
-        {
-
-            color: var(--color-grey);
-            text-align: center;
-
-            font-family: bosaca-script;
-            font-size: max(2.4vw + 1rem, 24pt);
-            text-transform: uppercase;
-
-            padding-top: max(5vw - 16px, 26px);
-            margin-bottom: max(8vw - 16px, 26px);
-
-        }
-
-        .gallery .grid
-        {
-            height: 100%;
-            width: 72%;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 60px;
-            padding-bottom: 60px;
-
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .gallery .grid
-            {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (orientation: portrait)
-        {
-
-            .gallery
-            {
-                height: 200vh;
-            }
-
-            .gallery .grid
-            {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        .gallery .grid .option
-        {
-            position: relative; 
-
-            box-shadow: 1px 1px 15px;
-
-        }
-
-        .gallery .grid .option img
-        {
-
-            position: absolute;
-             
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-        }
-
-        .gallery .grid .option .title-box
-        {
-
-            z-index: 1;
-            background: rgba(86, 80, 77, 0.6);
-
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-
-            width: 36%;
-            height: 24%;
-
-            display: flex;
-
-        }
-
-        .gallery .grid .option .title-box h3
-        {
-            color: white;
-            margin: auto;
-
-            text-transform: uppercase;
-        }
-
 
     </style>
 
 </head>
+
 <body>
-
-    <nav>
-
-    </nav>
-
-    <header>
-
-    </header>
 
     <section class="intro">
 
-        <h2> <span>Hello</span> everyone,</h2>
+        <h2>Hello</h2>
+        <h3>everyone,</h3>
 
         <div>
 
-            <br>
             <p>I will be happy to make your logo :)</p>
             <br>
             <p>Your logo will probably be the first thing your customers see, so let's make it be the first thing they remember!</p>
             <br>
             <p>I'm available for new projects!</p>
-            <br>
 
         </div>
 
     </section>
-
-    <section class="service">
-
-        <div class="title">
-
-            <div></div>
-            <img src="./images/text_service.png" alt="Title-img">
-            <div></div>
-
-        </div>
-
-        <div class="grid">
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_01.png" alt="service-option-img">
-                <a href="#"> <h2>Brand</h2></a>
-                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
-
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_02.png" alt="service-option-img">
-                <a href="#"> <h2>Logo</h2></a>
-                <a href="#"> <p>You will get a logo based on your ideas and visions, or freshen up your old design!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_03.png" alt="service-option-img">
-                <a href="#"> <h2>Template</h2></a>
-                <a href="#"> <p>Vectors, Stickers and little illustrations originaly designed for you to use or print!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_04.png" alt="service-option-img">
-                <a href="#"> <h2>Cards</h2></a>
-                <a href="#"> <p>Here you can find buisiness, inivation, greeting, or any other cards that you need!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_05.png" alt="service-option-img">
-                <a href="#"> <h2>Package</h2></a>
-                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
-                
-            </div>
-
-        </div>
-
-        <div class="line"></div>
-
-    </section>
-
-    <section class="aboute">
-
-        <h2>Aboute</h2>
-
-        <p>I'm 30 years old based in Miami Beach, FL </p>
-        <p>I graduated in Electrical Engineering, but as I always had passion for art, I ended up following my dreams and doing design instead! </p>
-
-    </section>
-
-    <!-- GALLERY -->
-
-    <section class="gallery">
-
-        <h2>Galery</h2>
-
-        <div class="grid">
-
-            <div class="option">
-                <img src="./images/galery_home/img_01.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Simple</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_02.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Cards</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_03.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Package</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_04.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Template</h3>
-                </div>
-
-            </div>
-           
-            <div class="option">
-                <img src="./images/galery_home/img_05.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Brand</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_06.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Logo</h3>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
     
 </body>
 </html>
