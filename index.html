@@ -556,6 +556,99 @@
             text-transform: uppercase;
         }
 
+        /* ...CONTACT... */
+
+        footer
+        {
+
+            height: 100vh;
+            height: calc(100vh - 2 * var(--offset));
+            margin: var(--offset);
+
+            background: url(./images/bg_img_contact\ 01.png);
+            background-repeat: no-repeat;
+
+            background-position: center;
+            background-size: auto 100%;
+
+            display: flex;
+            position: relative;
+
+        }
+
+        footer div
+        {
+
+            position: absolute;
+            
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 24%;
+            height: 80px;
+
+            min-width: 360px;
+           
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        footer .link
+        {
+            position: absolute;
+            
+            top: 64%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            font-size: calc(0.8vw + 0.8rem);
+            color: black;
+
+        }
+
+        footer div img
+        {
+            height: 100%;
+        }
+
+        footer .title
+        {
+            
+            position: relative;
+            top: 36%;
+            left: 20%;
+
+            height: 10vw;
+            max-height: 100px;
+
+        }
+
+        @media screen and (max-width: 768px)
+        {
+            footer
+            {
+                height: 40vh;
+                background-size: cover;
+            }
+
+            footer div
+            {
+                width: 40%;
+                height: 30px;
+
+                min-width: auto;
+            }
+
+            footer .title
+            {
+                top: 32%;
+                left: 12%;
+            }
+
+        }
+
 
     </style>
 
@@ -718,6 +811,23 @@
 
     </section>
 
+    <!-- CONTACT -->
+
+    <footer>
+
+        <div>
+
+            <li><a href="#"><img src="/images/icons/msg_icon.png" alt="msg_icon"></a></li>
+            <li><a href="#"><img src="/images/icons/ig_icon.png" alt="ig_icon"></a></li>
+            <li><a href="#"><img src="/images/icons/fb_icon.png" alt="fb_icon"></a></li>
+
+        </div>
+
+        <a class="link" href="mailto:designstarla@gmail.com">designstarla@gmail.com</a>
+
+        <img  class="title" src="/images/text_contact.png" alt="img_contact">
+
+    </footer>
     
     
 </body>
