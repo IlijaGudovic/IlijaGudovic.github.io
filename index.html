@@ -6,647 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
 
         *
         {
             margin: 0;
             padding: 0;
-            text-decoration: none;
-            list-style: none;
-            font-weight:normal;
-            color: var(--color-grey);
         }
 
-        :root
+        body
         {
-            --color-pink: #EAE1E4;
-            --color-dark-pink: #B48CA4;
-            --color-grey: #56504D;
-            --color-dark-gray: #222;
-
-            --offset: calc(1.2vw + 14px);
-
+            font-size: 16px;
+            font-weight: 400;
+            color: #222222;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        @font-face
+        h2
         {
-            font-family: blackstory-script;
-            src: url("fonts/blackstory-script.ttf");
-        }
-
-        @font-face
-        {
-            font-family: bosaca-script;
-            src: url("fonts/bosca-light.ttf");
-        }
-
-        nav
-        {
-
-            background: var(--color-pink);
-
-            width: 100%;
-            height: 60px;
-
-            margin-top: 20px;
-
-        }
-
-        /* ...HEADER... */
-
-        header
-        {
-
-            height: 100vh;
-            margin: calc(1.2vw + 14px);
-
-            background: url(./images/bg_img_header.png);
-            background-repeat: no-repeat;
-
-            background-position: center left 35%;
-            background-size: auto 100%;
-
-        }
-        
-
-        @media screen and (max-width: 800px)
-        {
-            header
-            {
-                height: 76vh;
-                background-size: cover;
-            }
-        }
-
-        /* ...INTRO... */
-
-        .intro
-        {
-
-            height: calc(100vh - 2 * var(--offset));
-
-            background-image: url("images/bg_img_intro.png");
-            background-repeat: no-repeat;
-            background-position: center left 20%;
-            background-size: cover, auto;
-
-            margin: var(--offset);
-
-            overflow: hidden;
-
-            color: var(--color-grey);
-
-        }
-
-        .intro h2
-        {
-
-            font-family: blackstory-script;
-            font-size: 16rem;
-
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            margin-top: 18vh;
-            margin-left: -132px;
-
-        }
-
-        .intro h3
-        {
-
-            font-size: 3rem;
-
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            margin-top: calc(18vh + 6rem);
-            margin-left: 146px;
-
-        }
-
-        .intro div
-        {
-            margin-top: calc(18vh + 12rem);
-        }
-
-        .intro p
-        {
-
-            font-size: calc(2.4vh + 0.6rem);
-
-            /* background-color: bisque; */
-            color: var(--color-dark-gray);
-
-            position: relative;
-            left: 50%;
-            width: 40%;
-
             line-height: 1.2;
+        }
 
-            margin-top: 1.4rem;
+        a
+        {
+            text-decoration: none;
+            display: inline-block;
+            color: tomato;
+        }
 
-            color: var(--color-grey);
+        .container
+        {
+
+            width: 1180px;
+            max-width: 95%;
+            margin: 0 auto;
 
         }
 
-        @media screen and (max-width: 768px)
+        .pricing
         {
-
-            .intro h2
-            {
-                font-size: 6rem;
-
-                margin-top: calc(5.4vh + 2rem);
-                margin-left: -52px;
-            }
-
-            .intro h3
-            {
-                font-size: 1.6rem;
-
-                margin-top: calc(7.32vh + 3rem);
-                margin-left: 76px;
-            }
-
-            .intro div
-            {
-                margin-top: calc(20vh + 3.2rem);
-            }
-
-            .intro p
-            {
-
-                left: 0;
-                width: 100%;
-
-                max-width: 80%;
-                margin: auto;
-
-                font-size: min(1.2vh + 0.5rem, 1rem);
-                line-height: 1.4;
-
-                text-align: justify;
-                text-align-last: center;
-
-                margin-top: 1.4rem;
-
-                color: var(--color-dark-gray);
-
-            }
-
+            width: 100%;
+            height: auto;
+            background: #fff;
+            padding: 30px 0;
         }
 
-        @media screen and (max-height: 724px)
+        .pricing .heading
         {
-            .intro p:last-child
-            {
-                text-align-last: right;
-            }
+            width: 760px;
+            max-width: 95%;
+            margin: 0 auto 50px;
+            text-align: center;
         }
 
-        /* --- SERVICE --- */
-
-        .service
+        .pricing .heading h2
         {
+            font-size: 2.6em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
 
-            background: var(--color-pink);
+        .pricing .heading p
+        {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+        }
 
-            margin: var(--offset);
-
-            height: calc(100vh - 2 * var(--offset));
-
+        .pricing .table
+        {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-around;
         }
 
-        .service .title
+        .pricing .table .box
+        {
+            width: 300px;
+            max-width: 100%;
+            background: #fff;
+            padding: 30px 20px;
+            margin: 15px;
+            border-radius: 50px;
+            box-shadow: 0 0 30px rgb(33 33 33 / 10%);
+        }
+
+        .pricing .table .box .price
         {
             position: relative;
-            display: flex;
-            flex-direction: row;
-            width: 86%;
-            margin-left: auto;
-            margin-right: auto;
-            top: 40px;
-
-        }
-
-        .service .title img
-        {
-            width: max(16%, 160px);
-            margin-left: 2vh;
-            margin-right: 2vh;
-        }
-
-        .service .title div
-        {
-            margin: auto;
-            height: 2px;
-            background: var(--color-dark-pink);
-            width: 100%;
-            filter: blur(0px);
-        }
-
-        .service .grid
-        {
-
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 24px;
-
-            height: 100%;
-
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-
-            margin-top: 10%;
-
-        }
-
-        .service .option
-        {
-
             text-align: center;
-
+            margin-bottom: 50px;
         }
 
-        .service .option img
+        .pricing .table .box .price h3
         {
+            font-size: 3em;
+            width: 80px;
+            margin: 0 auto 25px;
+        }
 
+        .pricing .table .description
+        {
+            width: 170px;
+            margin: 0 auto 25px;
+        }
+
+        .pricing .table .description ul
+        {
+            list-style-type: none;
+        }
+
+        .pricing .table .description ul li
+        {
             display: block;
+            margin-bottom: 15px;
 
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .service .option a
+        .pricing .table .description ul li:hover
         {
-            color: var(--color-grey);
+            transform: translateX(-10px);
         }
 
-        .service .option h2
+        .pricing .table .description ul li i
         {
-
-            font-size: calc(2vw + 1rem);
-            margin-bottom: max(1.4vw, 10px);
-            color: var(--color-dark-pink);
-
-            margin-top: 20%;
-
+            display: inline-block;
+            margin-right: 22px;
         }
 
-        .service .option p
+        .pricing .table .box .btn
         {
-            font-size: max(0.8vw + 0.6rem, 1.2rem);
-        }
-        
-        .service .line
-        {
-            height: 2px;
-            background: var(--color-dark-pink);
-            margin: auto;
-            width: 86%;
-
-            position: relative;
-            margin-top: max(6vw, 50px);
-            bottom: max(2vw, 16px);
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .service
-            {
-                height: auto;
-            }
-
-            .service .grid
-            {
-                grid-template-columns: repeat(auto-fill, minmax(200px , 1fr));
-            }
-        }
-
-        @media screen and (max-width: 800px)
-        {
-
-            .service .grid
-            {
-                margin-top: 18%;
-                width: 74%;
-            }
-
-            .service .option img
-            {
-                width: 40%;
-                margin-top: 8%;
-            }
-
-            .service .option h2
-            {
-
-                margin-top: 4%;
-
-            }
-
-            .service .option p
-            {
-                font-size: calc(1vw + 0.8rem);
-            }
-
-            .service .option p::after
-            {
-
-                margin-top: 4px;
-
-                content: "See more!";
-
-                position: relative;
-                text-align: center;
-                display: block;
-                align-items: center;
-
-                color: var(--color-dark-pink);
-                text-decoration: underline;
-
-            }
-
-        }
-
-         /* --- ABOUTE --- */
-
-        .aboute
-        {
-
-
-            background: url("images/bg_img_about.png");
-            background-repeat: no-repeat;
-
-            background-position: left 20.8% center;
-            background-size: cover, auto;
-
-            height: 100vh;
-
-            margin: calc(1.2vw + 14px);
-
             text-align: center;
-            color: var(--color-grey);
-
         }
 
-        .aboute h2
+        .pricing .table .box .btn a
         {
+            font-size: 1.1em;
+            font-weight: 500;
 
-            font-family: blackstory-script;
-            font-size: max(10vw, 84pt);
+            color: tomato;
+            border: 1.8px solid tomato;
+            padding: 8px 30px;
+            border-radius: 30px;
 
-            padding-top: max(10%, 100px);
-            /* 40px */
-            margin-bottom: max(6%, 10px);
-            /* 100px */
-
+            transition: 0.3s;
         }
 
-        .aboute p
+        .pricing .table .box .btn a:hover
         {
-            font-family: bosaca-script;
-            font-size: max(2vw, 14pt);
-            width: 60%;
-            margin: auto;
-        }
-
-        @media screen and (max-width: 800px)
-        {
-
-            .aboute h2
-            {
-
-                padding-top: 24vh;
-                margin-bottom: 4vh;
-
-            }
-            
-            .aboute p
-            {
-
-                font-size: calc(1.2vw + 0.6rem);
-                width: 80%;
-                margin: auto;
-            }
-
-        }
-
-        /* ...GALLLERY... */
-
-        .gallery
-        {
-            height: 100vh;
-            background: url(./images/bg_img_galery.png) , var(--color-pink);
-
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: 100% auto;
-
-            /* margin: var(--offset); */
-
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        .gallery h2
-        {
-
-            color: var(--color-grey);
-            text-align: center;
-
-            font-family: bosaca-script;
-            font-size: max(2.4vw + 1rem, 24pt);
-            text-transform: uppercase;
-
-            padding-top: max(5vw - 16px, 26px);
-            margin-bottom: max(8vw - 16px, 26px);
-
-        }
-
-        .gallery .grid
-        {
-            height: 100%;
-            width: 72%;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 60px;
-            padding-bottom: 60px;
-
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .gallery .grid
-            {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (orientation: portrait)
-        {
-
-            .gallery
-            {
-                height: 200vh;
-            }
-
-            .gallery .grid
-            {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        .gallery .grid .option
-        {
-            position: relative; 
-
-            box-shadow: 1px 1px 15px;
-
-        }
-
-        .gallery .grid .option img
-        {
-
-            position: absolute;
-             
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-        }
-
-        .gallery .grid .option .title-box
-        {
-
-            z-index: 1;
-            background: rgba(86, 80, 77, 0.6);
-
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-
-            width: 36%;
-            height: 24%;
-
-            display: flex;
-
-        }
-
-        .gallery .grid .option .title-box h3
-        {
-            color: white;
-            margin: auto;
-
-            text-transform: uppercase;
-        }
-
-        /* ...CONTACT... */
-
-        footer
-        {
-
-            height: 100vh;
-            height: calc(100vh - 2 * var(--offset));
-            margin: var(--offset);
-
-            background: url(./images/bg_img_contact\ 01.png);
-            background-repeat: no-repeat;
-
-            background-position: center;
-            background-size: auto 100%;
-
-            display: flex;
-            position: relative;
-
-        }
-
-        footer div
-        {
-
-            position: absolute;
-            
-            top: 52%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            width: 24%;
-            height: 80px;
-
-            min-width: 360px;
-           
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        footer .link
-        {
-            position: absolute;
-            
-            top: 64%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            font-size: calc(0.8vw + 0.8rem);
-            color: black;
-
-        }
-
-        footer div img
-        {
-            height: 100%;
-        }
-
-        footer .title
-        {
-            
-            position: relative;
-            top: 36%;
-            left: 20%;
-
-            height: 10vw;
-            max-height: 100px;
-
-        }
-
-        @media screen and (max-width: 768px)
-        {
-            footer
-            {
-                height: 40vh;
-                background-size: cover;
-            }
-
-            footer div
-            {
-                width: 40%;
-                height: 30px;
-
-                min-width: auto;
-            }
-
-            footer .title
-            {
-                top: 32%;
-                left: 12%;
-            }
-
+            transform: scale(0.9);
         }
 
 
@@ -655,180 +170,86 @@
 </head>
 <body>
 
-    <nav>
+    <section class="pricing">
 
-    </nav>
+        <div class="container">
 
-    <header>
-
-    </header>
-
-    <section class="intro">
-
-        <h2>Hello</h2>
-        <h3>everyone,</h3>
-
-        <div>
-
-            <p>I will be happy to make your logo :)</p>
-            <p>Your logo will probably be the first thing your customers see, so let's make it be the first thing they remember!</p>
-            <p>I'm available for new projects!</p>
-
-        </div>
-
-    </section>
-
-    <section class="service">
-
-        <div class="title">
-
-            <div></div>
-            <img src="./images/text_service.png" alt="Title-img">
-            <div></div>
-
-        </div>
-
-        <div class="grid">
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_01.png" alt="service-option-img">
-                <a href="#"> <h2>Brand</h2></a>
-                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
-
+            <div class="heading">
+                <h2>Pricing Table</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, architecto quod autem exercitationem iure in.</p>
             </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_02.png" alt="service-option-img">
-                <a href="#"> <h2>Logo</h2></a>
-                <a href="#"> <p>You will get a logo based on your ideas and visions, or freshen up your old design!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_03.png" alt="service-option-img">
-                <a href="#"> <h2>Template</h2></a>
-                <a href="#"> <p>Vectors, Stickers and little illustrations originaly designed for you to use or print!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_04.png" alt="service-option-img">
-                <a href="#"> <h2>Cards</h2></a>
-                <a href="#"> <p>Here you can find buisiness, inivation, greeting, or any other cards that you need!</p></a>
-                
-            </div>
-
-            <div class="option">
-                
-                <img src="./images/services_icons/icon_05.png" alt="service-option-img">
-                <a href="#"> <h2>Package</h2></a>
-                <a href="#"> <p>If you are not sure about which logo will fit your business the best, I will help you create unique and creative brand identity!</p></a>
-                
-            </div>
-
-        </div>
-
-        <div class="line"></div>
-
-    </section>
-
-    <section class="aboute">
-
-        <h2>Aboute</h2>
-
-        <p>I'm 30 years old based in Miami Beach, FL </p>
-        <p>I graduated in Electrical Engineering, but as I always had passion for art, I ended up following my dreams and doing design instead! </p>
-
-    </section>
-
-    <!-- GALLERY -->
-
-    <section class="gallery">
-
-        <h2>Galery</h2>
-
-        <div class="grid">
-
-            <div class="option">
-                <img src="./images/galery_home/img_01.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Simple</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_02.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Cards</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_03.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Package</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_04.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Template</h3>
-                </div>
-
-            </div>
-           
-            <div class="option">
-                <img src="./images/galery_home/img_05.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Brand</h3>
-                </div>
-
-            </div>
-
-            <div class="option">
-                <img src="./images/galery_home/img_06.png" alt="gallery-home-img">
-
-                <div class="title-box">
-                    <h3>Logo</h3>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACT -->
-
-    <footer>
-
-        <div>
-
-            <li><a href="#"><img src="/images/icons/msg_icon.png" alt="msg_icon"></a></li>
-            <li><a href="#"><img src="/images/icons/ig_icon.png" alt="ig_icon"></a></li>
-            <li><a href="#"><img src="/images/icons/fb_icon.png" alt="fb_icon"></a></li>
-
-        </div>
-
-        <a class="link" href="mailto:designstarla@gmail.com">designstarla@gmail.com</a>
-
-        <img  class="title" src="/images/text_contact.png" alt="img_contact">
-
-    </footer>
     
+            <div class="table">
+                <div class="box">
+                    <div class="price">
+    
+                        <h3>25$</h3>
+                        <p>Per Month</p>
+    
+                    </div>
+    
+                    <div class="description">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                        </ul>
+                    </div>
+    
+                    <div class="btn">
+                        <a href="#">Get Started</a>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <div class="price">
+    
+                        <h3>45$</h3>
+                        <p>Per Month</p>
+    
+                    </div>
+    
+                    <div class="description">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                        </ul>
+                    </div>
+    
+                    <div class="btn">
+                        <a href="#">Get Started</a>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <div class="price">
+    
+                        <h3>85$</h3>
+                        <p>Per Month</p>
+    
+                    </div>
+    
+                    <div class="description">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                            <li><i class="fa-solid fa-check"></i> Lorem Ipsum</li>
+                        </ul>
+                    </div>
+    
+                    <div class="btn">
+                        <a href="#">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
     
 </body>
 </html>
