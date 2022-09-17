@@ -386,7 +386,7 @@
             background-image: url("./images/bg_img_about.png");
             background-repeat: no-repeat;
 
-            background-position: center left;
+            background-position: center;
             background-size: cover;
 
             height: 100vh;
@@ -433,6 +433,7 @@
             {
                 /* background-position: top left 4%; */
                 background-size: auto 120%;
+                background-position: center left;
 
                 max-height: 724px; /*754*/
             }
@@ -482,6 +483,7 @@
 
         .gallery
         {
+            position: relative;
             height: 100vh;
             background: url(./images/bg_img_galery.png) , var(--color-pink);
 
@@ -513,6 +515,7 @@
 
         .gallery .grid
         {
+            position: relative;
             height: 100%;
             width: 72%;
             margin: auto;
@@ -533,6 +536,12 @@
             transition: ease 0.2s;
         }
 
+        .gallery .grid .option:hover
+        {
+            cursor: pointer;
+            transform: scale(1.04);
+        }
+
         .gallery .grid .option img
         {
 
@@ -542,12 +551,6 @@
             height: 100%;
 
             object-fit: cover;
-        }
-
-        .gallery .grid .option:hover
-        {
-            cursor: pointer;
-            transform: scale(1.04);
         }
 
         .gallery .grid .option .title-box
@@ -572,17 +575,13 @@
         .gallery .grid .option .title-box p
         {
             color: white;
-
             margin: auto;
-            padding: 18% 0;
-            border: solid 1px;
 
             letter-spacing: 1px;
             font-weight: 400;
             font-size: 120%;
-            line-height: 0;
 
-            font-family: 'Tajawal', sans-serif, !important;
+            font-family: 'Tajawal', sans-serif;
             text-transform: uppercase;
         }
 
