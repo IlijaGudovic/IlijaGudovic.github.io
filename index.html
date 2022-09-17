@@ -574,6 +574,7 @@
             margin: auto;
 
             letter-spacing: 1px;
+            line-height: 0;
             font-weight: 400;
             font-size: 120%;
 
@@ -592,7 +593,13 @@
 
             .gallery .grid .option .title-box p
             {
-                border: solid;
+                border: solid 1px;
+            }
+
+            .gallery .grid .option:hover
+            {
+                cursor: pointer;
+                transform: scale(1);
             }
 
         }
