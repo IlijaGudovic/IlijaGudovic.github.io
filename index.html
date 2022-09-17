@@ -483,7 +483,135 @@
         .gallery
         {
             height: 100vh;
+            background: url(./images/bg_img_galery.png) , var(--color-pink);
+
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100% auto;
+
+            display: flex;
+            flex-direction: column;
+
+            margin: 0;
         }
+
+        .gallery h2
+        {
+
+            color: var(--color-grey);
+            text-align: center;
+
+            font-family: 'Tajawal', sans-serif;
+            font-size: max(2.4vw + 1rem, 24pt);
+            text-transform: uppercase;
+            font-weight: 400;
+
+            padding-top: max(5vw - 16px, 26px);
+            margin-bottom: max(8vw - 16px, 26px);
+
+        }
+
+        .gallery .grid
+        {
+            height: 100%;
+            width: 72%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 60px;
+            padding-bottom: 60px;
+
+        }
+
+        .gallery .grid .option
+        {
+            position: relative;
+
+            box-shadow: 1px 1px 15px;
+
+            transition: ease 0.2s;
+        }
+
+        .gallery .grid .option img
+        {
+
+            position: absolute;
+             
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .gallery .grid .option:hover
+        {
+            cursor: pointer;
+            transform: scale(1.04);
+        }
+
+        .gallery .grid .option .title-box
+        {
+
+            z-index: 1;
+            background: rgba(86, 80, 77, 0.6);
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 36%;
+            height: 24%;
+
+            display: flex;
+
+        }
+
+        .gallery .grid .option .title-box p
+        {
+            color: white;
+            margin: auto;
+
+            letter-spacing: 1px;
+            font-weight: 400;
+            font-size: 120%;
+
+            font-family: 'Tajawal', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* #region Mobile About */
+
+        @media screen and (max-width: 1200px)
+        {
+            .gallery .grid
+            {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery .grid .option .title-box p
+            {
+                font-size: medium;
+            }
+
+        }
+
+        @media (orientation: portrait)
+        {
+
+            .gallery
+            {
+                height: 200vh;
+            }
+
+            .gallery .grid
+            {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* #endregion */
 
         /* #endregion */
 
@@ -647,6 +775,68 @@
     <!-- #region Gallery -->
 
     <section class="gallery" id="gallery">
+
+        <section class="gallery">
+
+            <h2>Galery</h2>
+    
+            <div class="grid">
+    
+                <div class="option">
+                    <img src="./images/galery_home/img_01.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Simple</p>
+                    </div>
+    
+                </div>
+    
+                <div class="option">
+                    <img src="./images/galery_home/img_02.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Cards</p>
+                    </div>
+    
+                </div>
+    
+                <div class="option">
+                    <img src="./images/galery_home/img_03.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Package</p>
+                    </div>
+    
+                </div>
+    
+                <div class="option">
+                    <img src="./images/galery_home/img_04.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Template</p>
+                    </div>
+    
+                </div>
+               
+                <div class="option">
+                    <img src="./images/galery_home/img_05.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Brand</p>
+                    </div>
+    
+                </div>
+    
+                <div class="option">
+                    <img src="./images/galery_home/img_06.png" alt="gallery-home-img">
+    
+                    <div class="title-box">
+                        <p>Logo</p>
+                    </div>
+    
+                </div>
+    
+            </div>
 
     </section>
 
