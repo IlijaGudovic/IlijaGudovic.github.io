@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -320,15 +320,18 @@
 
         .services
         {
-            padding: 0 6%;
+            /* padding: 0 6%; */
+
+            display: flex;
+            justify-content: space-around;
         }
 
         .services .table
         {
-            width: 100%;
+            width: auto;
             display: flex;
             flex-wrap: wrap;
-            align-items: flex-start;
+            /* align-items: flex-start; */
             justify-content: space-around;
         }
 
@@ -352,6 +355,26 @@
             display: block;
             margin: auto;
             width: 50%;
+        }
+
+        .services .table .box:hover
+        {
+            cursor: pointer;
+        }
+
+        /* .services .table .box:hover img
+        {
+            animation-name: myAnim;
+            animation-duration: 0.66s;
+        } */
+
+        @keyframes myAnim
+        {
+            15%{transform: rotate(15deg);}
+            30%{transform: rotate(-15deg);}
+            45%{transform: rotate(15deg);}
+            60%{transform: rotate(-15deg);}
+            75%{transform: rotate(15deg);}
         }
 
         .services h2
@@ -387,6 +410,14 @@
             bottom: 45px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 1584px)
+        {
+            .services .table
+            {
+                max-width: 746px;
+            }
         }
 
         /* #endregion */
@@ -436,6 +467,13 @@
         {
             text-decoration: underline;
             text-decoration-color: #222;
+
+            transition: ease 0.2s;
+        }
+
+        .links:hover
+        {
+            font-size: 112%;
         }
 
         /* #region About Mobile */
@@ -506,7 +544,18 @@
             flex-direction: column;
 
             margin: 0;
+            position: relative;
         }
+
+        /* .gallery::after
+        {
+            content: '';
+            height: 40px;
+            width: 100%;
+            position: absolute;
+            bottom: -40px;
+            background: linear-gradient(to bottom, var(--color-pink), transparent );
+        } */
 
         .gallery h2
         {
@@ -560,8 +609,6 @@
             object-fit: cover;
         }
 
-        
-
         .gallery .grid .option .title-box
         {
 
@@ -590,7 +637,7 @@
             text-align: center;
 
             letter-spacing: 1px;
-            /* font-size: 120%; */
+            font-size: 120%;
 
             font-family: tajawal-regular-script;
             text-transform: uppercase;
@@ -632,6 +679,86 @@
         }
 
         /* #endregion */
+
+        /* #endregion */
+
+        /* #region Subscription */
+
+        .subscription
+        {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 42px 18%;
+            font-family: tajawal-regular-script;
+        }
+
+        .subscription h2
+        {
+            font-size: 2.6rem;
+            margin-bottom: 6px;
+        }
+
+        .subscription p
+        {
+            font-size: var(--medium-font-size);
+            color: var(--color-dark-gray);
+            line-height: 30px;
+        }
+
+        .subscription form
+        {
+            max-width: 100%;
+            width: 450px;
+            position: relative;
+        }
+
+        .subscription form input:first-child
+        {
+            display: inline-block;
+            width: 100%;
+            padding: 20px 150px 20px 30px;
+            box-shadow: 4px 10px 30px rgb(85 85 85 / 20%);
+            outline: none;
+            border: none;
+            border-radius: 15px;
+        }
+        .subscription form input:last-child
+        {
+            display: inline-block;
+            position: absolute;
+            outline: none;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 15px;
+            background: var(--pauder-color);
+            color: var(--color-dark-gray);
+            top: 6px;
+            right: 6px;
+            cursor: pointer;
+            
+            letter-spacing: 2px;
+        }
+
+        @media screen and (max-width: 1264px)
+        {
+            .subscription form
+            {
+                margin-top: 24px;
+            }
+        }
+
+        @media screen and (max-width: 624px)
+        {
+            .subscription
+            {
+                width: 320px;
+                padding: 42px 16px;
+                margin: auto;
+            }
+        }
 
         /* #endregion */
 
@@ -696,7 +823,7 @@
 
     <!-- #region Header -->
     <header>
-        <a href="#" class="logo">Logo Design</a>
+        <a href="#" class="logo">Design Starla</a>
         <div class="bx bx-menu" id="menu-icon"></div>
     
         <ul class="navbar">
@@ -738,8 +865,8 @@
 
         <div class="table">
 
-            <div class="box">
-                <img src="./images/services_icons/icon_01.png" alt="service-option-img">
+            <div class="box" onclick="shake('1')" onmouseenter="shake('1')">
+                <img id="1" src="./images/services_icons/icon_01.png" alt="service-option-img">
                 <h2>Logo</h2>
                 <p>Based on your ideas and my visions you will get unique and high quality logo!</p>
                 <div class="btn">
@@ -747,8 +874,8 @@
                 </div>
             </div>
 
-            <div class="box">
-                <img src="./images/services_icons/icon_03.png" alt="service-option-img">
+            <div class="box" onclick="shake('2')" onmouseenter="shake('2')">
+                <img id="2" src="./images/services_icons/icon_03.png" alt="service-option-img">
                 <h2>Template</h2>
                 <p>Vectors, Stickers and little illustrations originaly designed for you to use or print!</p>
                 <div class="btn">
@@ -756,8 +883,8 @@
                 </div>
             </div>
 
-            <div class="box">
-                <img src="./images/services_icons/icon_04.png" alt="service-option-img">
+            <div class="box" onclick="shake('3')" onmouseenter="shake('3')">
+                <img id="3" src="./images/services_icons/icon_04.png" alt="service-option-img">
                 <h2>Cards</h2>
                 <p>Here you can find buisiness, inivation, greeting, or any other cards that you need!</p>
                 <div class="btn">
@@ -765,8 +892,8 @@
                 </div>
             </div>
 
-            <div class="box">
-                <img src="./images/services_icons/icon_05.png" alt="service-option-img">
+            <div class="box" onclick="shake('4')" onmouseenter="shake('4')">
+                <img id="4" src="./images/services_icons/icon_05.png" alt="service-option-img">
                 <h2>Package</h2>
                 <p>Make your product stand out by letting me design you modern and exotic package for your business!</p>
                
@@ -857,6 +984,27 @@
         </div>
 
     </section>
+
+    <!-- #endregion -->
+
+    <!-- #region Subscription -->
+
+        <section class="subscription">
+
+            <div>
+                <h2>Newsletter</h2>
+                <p>Subscribe For more HTML CSS and <br> coding tutorials!</p>
+            </div>
+
+            <form class="send" action="">
+
+                <!-- Write Your Email - Example@gmail.com -->
+                <input type="email" placeholder="Write Your Email" required>
+                <input type="submit" value="Submit">
+
+            </form>
+
+        </section>
 
     <!-- #endregion -->
 
