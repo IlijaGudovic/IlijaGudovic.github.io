@@ -324,6 +324,7 @@
 
             display: flex;
             justify-content: space-around;
+            user-select: none;
         }
 
         .services .table
@@ -338,6 +339,8 @@
         .services .table .box
         {
             position: relative;
+            user-select: none;
+            display: block;
 
             width: 340px;
             max-width: 100%;
@@ -865,7 +868,7 @@
 
         <div class="table">
 
-            <div class="box" onclick="shake('1')" onmouseenter="shake('1')">
+            <div class="box" onclick="shake('1')" onmouseenter="shake('1')" >
                 <img id="1" src="./images/services_icons/icon_01.png" alt="service-option-img">
                 <h2>Logo</h2>
                 <p>Based on your ideas and my visions you will get unique and high quality logo!</p>
