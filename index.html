@@ -765,6 +765,82 @@
 
         /* #endregion */
 
+        /* #region Concat */
+
+        .concat
+        {
+
+            height: calc(100vh - 105px);
+
+            background: url(./images/bg_img_concat.jpg.png);
+            background-repeat: no-repeat;
+
+            background-position: center;
+            background-size: auto 100% ;
+
+            display: flex;
+            position: relative;
+
+        }
+
+        .concat div
+        {
+            margin: auto;
+            width: 80%;
+            height: 30%;
+
+            position: relative;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            max-width: 424px;
+        }
+
+        .concat div li
+        {
+            display: block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 34%;
+        }
+
+        .concat div img
+        {
+            height: 100%;
+        }
+
+        .concat div .test1
+        {
+            position: absolute;
+
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-family: tajawal-medium-script;
+            /* font-family: tajawal-regular-script; */
+            font-size: var(--medium-font-size);
+            color: black;
+
+        }
+
+        @media screen and (max-width: 1264px)
+        {
+            .concat
+            {
+                height: calc(100vh - 60px)
+            }
+            .concat div
+            {
+                max-width: 100%;
+            }
+        }
+
+        /* #endregion */
+
         /* #region Buttons */
 
         .btn
@@ -868,7 +944,7 @@
 
         <div class="table">
 
-            <div class="box" onclick="shake('1')" onmouseenter="shake('1')" ontouchstart="shake('1')">
+            <div class="box" onclick="shake('1')" onmouseenter="shake('1')" >
                 <img id="1" src="./images/services_icons/icon_01.png" alt="service-option-img">
                 <h2>Logo</h2>
                 <p>Based on your ideas and my visions you will get unique and high quality logo!</p>
@@ -1011,13 +1087,31 @@
 
     <!-- #endregion -->
 
+    <!-- #region Contact -->
+
+    <section class="concat" id="concat">
+
+        <div>
+
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/msg_icon.png" alt="msg_icon"></a></li>
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/ig_icon.png" alt="ig_icon"></a></li>
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/fb_icon.png" alt="fb_icon"></a></li>
+
+            <a class="test1" href="mailto:designstarla@gmail.com">designstarla@gmail.com</a>
+        </div>
+
+        
+    </section>
+
+    <!-- #endregion -->
+
     <script src="/script.js"></script>
 
-    <div onclick="test(this)" style="display: block; height: 300px; width: 300px; background: black;">
-
-    </div>
+    <!-- <div onclick="test(this)" style="display: block; height: 300px; width: 300px; background: black;"> </div> -->
 
     <!-- how dose it work, 99 acc great rting -->
+
+    <!-- tablet , picture optimization, animation, gallery, services, contact msg -->
 
 </body>
 </html>
