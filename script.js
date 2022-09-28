@@ -30,7 +30,7 @@ if(window.mobileCheck != true)
 
     for (let i = 0; i < servicesIcons.length; i++)
     {
-        servicesIcons[i].addEventListener('touchstart', function(){shake(i)});
+        servicesIcons[i].addEventListener('touchstart', function(){shake(i + 1)});
     }
 }
 
