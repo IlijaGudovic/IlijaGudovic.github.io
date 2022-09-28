@@ -24,4 +24,53 @@ if(window.mobileCheck != true)
     {
         links[i].target = "_blank";
     }
+
+    //Animations
+    var servicesIcons = document.querySelectorAll(".box");
+
+    for (let i = 0; i < servicesIcons.length; i++)
+    {
+        servicesIcons[i].addEventListener('touchstart', function(){shake(i)});
+    }
+}
+
+var objAniamtion = document.getElementById("1");
+var cycle = 0;
+
+function shake(index)
+{
+    if(cycle > 3) 
+    {
+        console.log(cycle)
+        return;
+    }
+    cycle ++;
+
+    objAniamtion = document.getElementById(index);
+
+    objAniamtion.style.animationPlayState = "initial"
+    objAniamtion.style.animation = "myAnim 0.66s";
+
+    setTimeout(resetAnimation.bind(null, objAniamtion), 660);
+}
+
+function resetAnimation(resetObj)
+{
+    cycle --;
+    resetObj.style.animation = '';
+}
+
+
+
+
+function test(obj)
+{
+    if (obj.style.background == "black")
+    {
+        obj.style.background = "white"
+    }    
+    else
+    {
+        obj.style.background = "black"
+    }
 }
