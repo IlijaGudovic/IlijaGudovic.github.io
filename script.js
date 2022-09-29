@@ -16,6 +16,7 @@ menu.onclick = () => {
 // mobileAndTabletCheck 
 if(window.mobileCheck != true)
 {
+    
     let links = document.querySelectorAll(".links");
 
     console.log(links.length)
@@ -30,8 +31,21 @@ if(window.mobileCheck != true)
 
     for (let i = 0; i < servicesIcons.length; i++)
     {
+        servicesIcons[i].addEventListener('click', function(){shake(i + 1)});
+        servicesIcons[i].addEventListener('mouseenter', function(){shake(i + 1)});
+    }
+}
+else
+{
+
+    //Mobile User
+    var servicesIcons = document.querySelectorAll(".box");
+
+    for (let i = 0; i < servicesIcons.length; i++)
+    {
         servicesIcons[i].addEventListener('touchstart', function(){shake(i + 1)});
     }
+
 }
 
 var objAniamtion = document.getElementById("1");
