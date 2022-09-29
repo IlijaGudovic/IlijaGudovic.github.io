@@ -14,7 +14,7 @@ menu.onclick = () => {
 }
 
 // mobileAndTabletCheck 
-if(window.mobileCheck != true)
+if(!window.mobileCheck)
 {
     
     let links = document.querySelectorAll(".links");
@@ -63,7 +63,7 @@ function shake(index)
     objAniamtion = document.getElementById(index);
 
     objAniamtion.style.animationPlayState = "initial"
-    objAniamtion.style.animation = "myAnim 0.66s";
+    objAniamtion.style.animation = "shakeAnim 0.66s";
 
     setTimeout(resetAnimation.bind(null, objAniamtion), 660);
 }
@@ -73,9 +73,6 @@ function resetAnimation(resetObj)
     cycle --;
     resetObj.style.animation = '';
 }
-
-
-
 
 function test(obj)
 {
