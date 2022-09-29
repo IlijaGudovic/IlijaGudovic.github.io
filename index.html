@@ -362,7 +362,7 @@
 
         .services .table .box:hover
         {
-            /* cursor: pointer; */
+            cursor: pointer;
         }
 
         /* .services .table .box:hover img
@@ -420,6 +420,11 @@
             .services .table
             {
                 max-width: 746px;
+            }
+
+            .services .table .box:hover
+            {
+                cursor: default;
             }
         }
 
@@ -646,7 +651,7 @@
             text-transform: uppercase;
         }
 
-        /* #region Mobile About */
+        /* #region Mobile Gallery */
 
         @media screen and (max-width: 1200px)
         {
@@ -662,8 +667,10 @@
 
             .gallery .grid .option:hover
             {
+                cursor: default;
                 transform: scale(1);
             }
+            
 
         }
 
