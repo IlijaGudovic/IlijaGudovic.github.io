@@ -13,13 +13,19 @@ menu.onclick = () => {
     navbar.classList.toggle("open")
 }
 
-// mobileAndTabletCheck 
-if(!window.mobileCheck)
+const isMobile = function()
+{
+    const match = window.matchMedia("(pointer:coarse)");
+    return(match && match.matches);
+}
+
+//console.log(isMobile());
+
+// mobileAndTabletCheck // !window.mobileCheck
+if(!isMobile())
 {
     
     let links = document.querySelectorAll(".links");
-
-    console.log(links.length)
 
     for (let i = 0; i < links.length; i++)
     {
