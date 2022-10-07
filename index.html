@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* background: linear-gradient(to top, #ffebe5, transparent ); */
+
+        /* #region Defult */
+        :root
+        {
+            --mobile-font-size: calc(1.2rem + 1vw); 
+            --medium-font-size: 1.2rem; 
+            --large-font-size: 1.8rem; 
+
+            --pauder-color: #f1a5bc;
+            --pauder1-color: #f1a5bc;
+            --pauder2-color: #E08C9C;
+            --pink-color: #ef648d;
+
+            --color-pink: #EAE1E4;
+            --color-dark-pink: #B48CA4;
+            --color-grey: #56504D;
+            --color-dark-gray: #222;
+        }
+
+        *
+        {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        @font-face
+        {
+            font-family: blackstory-script; 
+            src: url("fonts/blackstory-script.ttf");
+        }
+
+        @font-face
+        {
+            font-family: tajawal-medium-script; 
+            src: url("fonts/Tajawal-Medium.ttf");
+        }
+
+        @font-face
+        {
+            font-family: tajawal-regular-script; 
+            src: url("fonts/Tajawal-Regular.ttf");
+        }
+
+        section
+        {
+            margin: 40px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        @media screen and (max-width: 768px)
+        {
+            section
+            {
+                margin: 0;
+            }
+        }
+        /* #endregion */
+
+        /* #region Header */
+        header
+        {
+            position: fixed;
+            width: 100%;
+            top: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* border-box */
+
+            z-index: 2;
+
+            padding: 16px 18%;
+            background-color: rgb(255, 255, 255);
+
+            font-family: 'Tajawal', sans-serif;
+            transition: ease .40s;
+        }
+
+        .logo
+        {
+            font-size: 36px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .navbar
+        {
+            display: flex;
+        }
+
+        .navbar a
+        {
+
+            font-weight: 500;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: black;
+
+            padding: 10px 22px;
+        }
+
+        #menu-icon
+        {
+            font-size: 36px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .sticky
+        {
+            padding: 10px 18%;
+        }
+
+        @media (max-width: 1400px)
+        {
+            header
+            {
+                padding: 16px 4%;
+            }
+
+            .sticky
+            {
+                padding: 10px 4%;
+            }
+        }
+
+        @media screen and (max-width: 768px)
+        {
+            #menu-icon
+            {
+                display: block;
+                color: var(--bg-color);
+                z-index: 2;
+            }
+
+            .logo
+            {
+                font-size: 24px;
+            }
+
+            .navbar
+            {
+                transition: ease .40s;
+
+                position: absolute;
+                top: 0;
+                right: -100%;
+                width: 270px;
+                height: 120vh;
+
+                background: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                padding: 90px 30px;
+            }
+
+            .navbar a
+            {
+                display: block;
+                margin: 1.2rem 0;
+            }
+
+            .open
+            {
+                right: 0;
+            }
+        }
+
+        /* #endregion */
+
+        /* #region Home */
+
+        .home
+        {
+            background: url("./images/test.jpg");
+            background-repeat: no-repeat;
+            background-position: center left 35%;
+            background-size: auto 100%;
+            background-size: cover;
+
+            margin-top: 0;
+            height: 100vh;
+        }
+
+        /* #endregion */
+
+        /* #region Uvod */
+        .uvod
+        {
+            background-image: url("./images/bg_img_intro.png");
+            background-repeat: no-repeat;
+
+            background-position: center left;
+            background-size: cover;
+           
+            height: 100vh;
+            min-height: 524px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .uvod .title
+        {
+            display: flex;
+            margin-left: calc(38% - 4px);
+            margin-top: 10%;
+        }
+
+        .uvod .title p:first-child
+        {
+            font-family: blackstory-script;
+            font-size: 10.4rem;
+
+            padding: 0 8px;
+        }
+
+        .uvod .title p:last-child
+        {
+
+            font-family: 'Edu SA Beginner', cursive;
+            font-size: var(--large-font-size);
+            font-weight: 400;
+
+            position: relative;
+
+            align-self: flex-end;
+            bottom: 30px;
+
+            padding: 0 8px;
+        }
+
+        .uvod .text
+        {
+            font-family: 'Edu SA Beginner', cursive;
+            font-size: var(--large-font-size);
+            
+            background: rgba(255, 255, 255, 0.5);
+
+            margin-left: 35%;
+            margin-top: 10px;
+            width: 50%;
+            max-width: 724px;  
+            
+        }
+
+        .uvod .text p
+        {
+            padding: 8px 6%;
+            max-height: 300px;
+        }
+
+        /* #region Uvod Mobile */
+        @media screen and (max-width: 768px)
+        {
+            .uvod
+            {
+                background-position: top left 4%;
+                background-size: auto 120%;
+
+                max-height: 724px; /*754*/
+            }
+
+            .uvod .title
+            {
+                position: relative;
+                margin: 0 auto;
+                margin-top: 36%;
+            }
+
+            .uvod .title p:first-child
+            {
+                font-size: 6.4rem;
+            }
+
+            .uvod .title p:last-child
+            {
+                font-size: var(--mobile-font-size);
+                bottom: 20px;
+            }
+
+            .uvod .text
+            {
+                font-size: var(--mobile-font-size);
+                text-align: center;
+
+                background: rgba(255, 255, 255, 0.5);
+                width: 100%;
+
+                margin-left: 0;
+                margin-top: 6%;
+            }
+
+        }
+        /* #endregion */
+
+        /* #endregion */
+
+        /* #region Services */
+
+        .services
+        {
+            /* padding: 0 6%; */
+
+            display: flex;
+            justify-content: space-around;
+            user-select: none;
+        }
+
+        .services .table
+        {
+            width: auto;
+            display: flex;
+            flex-wrap: wrap;
+            /* align-items: flex-start; */
+            justify-content: space-around;
+        }
+
+        .services .table .box
+        {
+            position: relative;
+            user-select: none;
+            display: block;
+
+            width: 340px;
+            max-width: 100%;
+            background: #fff;
+            padding: 30px 20px;
+            margin: 15px;
+            border-radius: 50px;
+            box-shadow: 0 0 30px rgb(33 33 33 / 16%);
+
+            height: 440px;
+        }
+
+        .services .table .box img
+        {
+            display: block;
+            margin: auto;
+            width: 50%;
+        }
+
+        .services .table .box:hover
+        {
+            cursor: pointer;
+        }
+
+        /* .services .table .box:hover img
+        {
+            animation-name: myAnim;
+            animation-duration: 0.66s;
+        } */
+
+        @keyframes shakeAnim
+        {
+            15%{transform: rotate(15deg);}
+            30%{transform: rotate(-15deg);}
+            45%{transform: rotate(15deg);}
+            60%{transform: rotate(-15deg);}
+            75%{transform: rotate(15deg);}
+        }
+
+        .services h2
+        {
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 300;
+            font-size: 1.8rem;
+
+            letter-spacing: 3px;
+            
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 12px;
+        }
+
+        .services p
+        {
+            font-family: 'Edu SA Beginner', cursive;
+            font-family: 'Tajawal', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+
+            text-align: center;
+            padding: 14px 2%;
+        }
+
+        .services .btn
+        {
+            /* margin-top: 32px; */
+
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 1584px)
+        {
+            .services .table
+            {
+                max-width: 746px;
+            }
+
+            .services .table .box:hover
+            {
+                cursor: default;
+            }
+        }
+
+        /* #endregion */
+
+        /* #region About */
+
+        .about
+        {
+            background-image: url("./images/bg_img_about.png");
+            background-repeat: no-repeat;
+
+            background-position: center;
+            background-size: cover;
+
+            height: 100vh;
+            min-height: 524px;
+
+            display: flex;
+            flex-direction: column;
+
+            position: relative;
+        }
+
+        .about .title
+        {
+            font-family: blackstory-script;
+            font-size: 10.4rem;
+
+            margin: 0 auto;
+            margin-top: 10vh;
+        }
+
+        .about .text
+        {
+            font-family: 'Edu SA Beginner', cursive;
+            font-size: var(--large-font-size);
+            
+            /* background: rgba(255, 255, 255, 0.5); */
+
+            margin-left: 32%;
+            margin-top: 64px;
+            width: 50%;
+            max-width: 724px;            
+        }
+
+        .links
+        {
+            text-decoration: underline;
+            text-decoration-color: #222;
+
+            transition: ease 0.2s;
+        }
+
+        .links:hover
+        {
+            font-size: 112%;
+        }
+
+        /* #region About Mobile */
+        @media screen and (max-width: 768px)
+        {
+            .about
+            {
+                /* background-position: top left 4%; */
+                background-size: auto 120%;
+                background-position: center left;
+
+                max-height: 724px; /*754*/
+            }
+
+            .about .title
+            {
+                font-size: 7.4rem;
+            }
+
+            .about .text
+            {
+                font-size: var(--mobile-font-size);
+                text-align: center;
+
+                /* background: rgba(255, 255, 255, 0.8); */
+                /* border-radius: 32px; */
+                width: 320px;
+
+                margin: auto;
+                margin-top: 6%;
+
+                position: relative;
+                z-index: 1;
+
+            }
+
+            .about .text::before
+            {
+                content: '';
+
+                background: rgba(255, 255, 255, 0.8);
+
+                position: absolute;
+                z-index: -1;
+                left: calc((-100vw + 100%)/2);
+
+                width: 100vw;
+                height: 100%;
+            }
+
+        }
+        /* #endregion */
+
+        /* #endregion */
+
+        /* #region Gallery*/
+
+        .gallery
+        {
+            height: 100vh;
+            background: url(./images/bg_img_galery.png) , var(--color-pink);
+
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100% auto;
+
+            display: flex;
+            flex-direction: column;
+
+            margin: 0;
+            position: relative;
+        }
+
+        /* .gallery::after
+        {
+            content: '';
+            height: 40px;
+            width: 100%;
+            position: absolute;
+            bottom: -40px;
+            background: linear-gradient(to bottom, var(--color-pink), transparent );
+        } */
+
+        .gallery h2
+        {
+            color: var(--color-grey);
+            text-align: center;
+
+            font-family: 'Tajawal', sans-serif;
+            font-size: max(2.4vw + 1rem, 24pt);
+            text-transform: uppercase;
+            font-weight: 400;
+
+            /* 5 - 8 */
+            padding-top: max(7vw - 16px, 22px);
+            margin-bottom: max(6vw - 16px, 26px);
+        }
+
+        .gallery .grid
+        {
+            height: 100%;
+            width: 72%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 60px;
+            padding-bottom: 60px;
+        }
+
+        .gallery .grid .option
+        {
+            position: relative;
+
+            box-shadow: 1px 1px 15px;
+
+            transition: ease 0.2s;
+        }
+
+        .gallery .grid .option:hover
+        {
+            cursor: pointer;
+            transform: scale(1.04);
+        }
+
+        .gallery .grid .option img
+        {
+            position: absolute;
+             
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .gallery .grid .option .title-box
+        {
+
+            z-index: 1;
+            background: rgba(86, 80, 77, 0.6);
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 36%;
+            height: 24%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+        }
+
+        .gallery .grid .option .title-box p
+        {
+            margin-top: 5%;
+
+            color: white;
+            text-align: center;
+
+            letter-spacing: 1px;
+            font-size: 120%;
+
+            font-family: tajawal-regular-script;
+            text-transform: uppercase;
+        }
+
+        /* #region Mobile Gallery */
+
+        @media screen and (max-width: 1200px)
+        {
+            .gallery .grid
+            {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery .grid .option .title-box p
+            {
+                font-size: medium;
+            }
+
+            .gallery .grid .option:hover
+            {
+                cursor: default;
+                transform: scale(1);
+            }
+            
+
+        }
+
+        @media (orientation: portrait)
+        {
+
+            .gallery
+            {
+                height: 200vh;
+            }
+
+            .gallery .grid
+            {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* #endregion */
+
+        /* #endregion */
+
+        /* #region Subscription */
+
+        .subscription
+        {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 42px 18%;
+            font-family: tajawal-regular-script;
+        }
+
+        .subscription h2
+        {
+            font-size: 2.6rem;
+            margin-bottom: 6px;
+        }
+
+        .subscription p
+        {
+            font-size: var(--medium-font-size);
+            color: var(--color-dark-gray);
+            line-height: 30px;
+        }
+
+        .subscription form
+        {
+            max-width: 100%;
+            width: 450px;
+            position: relative;
+        }
+
+        .subscription form input:first-child
+        {
+            display: inline-block;
+            width: 100%;
+            padding: 20px 150px 20px 30px;
+            box-shadow: 4px 10px 30px rgb(85 85 85 / 20%);
+            outline: none;
+            border: none;
+            border-radius: 15px;
+        }
+        .subscription form input:last-child
+        {
+            display: inline-block;
+            position: absolute;
+            outline: none;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 15px;
+            background: var(--pauder-color);
+            color: var(--color-dark-gray);
+            top: 6px;
+            right: 6px;
+            cursor: pointer;
+            
+            letter-spacing: 2px;
+        }
+
+        @media screen and (max-width: 1264px)
+        {
+            .subscription form
+            {
+                margin-top: 24px;
+            }
+        }
+
+        @media screen and (max-width: 624px)
+        {
+            .subscription
+            {
+                width: 320px;
+                padding: 42px 16px;
+                margin: auto;
+            }
+        }
+
+        /* #endregion */
+
+        /* #region Concat */
+
+        .concat
+        {
+
+            height: calc(100vh - 105px);
+
+            background: url(./images/bg_img_concat.jpg.png);
+            background-repeat: no-repeat;
+
+            background-position: center;
+            background-size: auto 100% ;
+
+            display: flex;
+            position: relative;
+
+        }
+
+        .concat div
+        {
+            margin: auto;
+            width: 80%;
+            height: 30%;
+
+            position: relative;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            max-width: 424px;
+        }
+
+        .concat div li
+        {
+            display: block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 34%;
+        }
+
+        .concat div img
+        {
+            height: 100%;
+        }
+
+        .concat div .test1
+        {
+            position: absolute;
+
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-family: tajawal-medium-script;
+            /* font-family: tajawal-regular-script; */
+            font-size: var(--medium-font-size);
+            color: black;
+
+        }
+
+        @media screen and (max-width: 1264px)
+        {
+            .concat
+            {
+                height: calc(100vh - 60px)
+            }
+            .concat div
+            {
+                max-width: 100%;
+            }
+        }
+
+        /* #endregion */
+
+        /* #region Buttons */
+
+        .btn
+        {
+            text-align: center;
+            font-family: 'Tajawal', sans-serif;
+
+            transition: ease 0.4s;
+        }
+
+        .btn a
+        {
+            font-size: 1.1em;
+            font-weight: 500;
+
+            color: var(--pauder-color);
+            color: #fff;
+
+            /* border: 2px solid var(--pauder-color); */
+
+            background: rgb(255, 255, 255);
+            background: var(--pauder-color);
+
+            background: linear-gradient(90deg, #0162c8, #55e7fc);
+            background: linear-gradient(180deg, #f1a5bc, #f16f96);
+
+            background: var(--pauder-color);
+
+            
+            /*
+             --pauder-color: #f1a5bc;
+
+            E08C9C
+            ef648d
+            e75a84
+            f16f96
+            
+
+            */
+
+            padding: 8px 20px;
+            border-radius: 20px;
+
+            transition: ease 0.4s;
+        }
+
+        .btn:hover
+        {
+            transform: translateX(-50%) scale(0.9);;
+        }
+
+        /* #endregion */
+        
+    </style>
+
+</head>
+<body>
+
+
+    <!-- #region Header -->
+    <header>
+        <a href="#" class="logo">Design Starla</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#concat">Contact Us</a></li>
+        </ul>
+    
+    </header>
+    <!-- #endregion -->
+
+    <!-- #region Home -->
+    <section class="home" id="home"></section>
+    <!-- #endregion -->
+
+    <!-- #region Uvod -->
+    
+    <section class="uvod">
+
+        <div class="title">
+            <p>Hello</p>
+            <p>everyone,</p>
+        </div>
+
+        <div class="text">
+
+            <p>I will be happy to make your logo :)</p>
+            <p>Your logo will probably be the first thing your customers see, so let's make it be the first thing they remember!</p>
+            <p>I'm available for new projects!</p>
+
+        </div>
+
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Services -->
+    <section class="services" id="services">
+
+        <div class="table">
+
+            <div class="box">
+                <img id="1" src="./images/services_icons/icon_01.png" alt="service-option-img">
+                <h2>Logo</h2>
+                <p>Based on your ideas and my visions you will get unique and high quality logo!</p>
+                <div class="btn">
+                    <a href="#">See more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img id="2" src="./images/services_icons/icon_03.png" alt="service-option-img">
+                <h2>Template</h2>
+                <p>Vectors, Stickers and little illustrations originaly designed for you to use or print!</p>
+                <div class="btn">
+                    <a href="#">See more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img id="3" src="./images/services_icons/icon_04.png" alt="service-option-img">
+                <h2>Cards</h2>
+                <p>Here you can find buisiness, inivation, greeting, or any other cards that you need!</p>
+                <div class="btn">
+                    <a href="#">See more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img id="4" src="./images/services_icons/icon_05.png" alt="service-option-img">
+                <h2>Package</h2>
+                <p>Make your product stand out by letting me design you modern and exotic package for your business!</p>
+               
+                <div class="btn">
+                    <a href="#">See more</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Aboute -->
+
+    <section class="about" id="about">
+
+        <p class="title">About</p>
+        <p class="text">I'm a Digital Artist living in Miami Beach, creating unique brands for 7 years by pseudonym Design Starla. I have achieved 
+            great deals with clients all around the world and looking for new opportunities! <br><br> Check my previous work on
+            <a class="links" href='https://99designs.com/profiles/2993835/about' >99designs</a>, <a class="links" href='https://www.freelancer.com/u/designstarla?fbclid=IwAR2qOa9AretNV3kEokIbheabzqmRfVu2azDQ7RpBppP0YbDk-nerDRFHYzo'>freelancer</a> and <a class="links" href='https://www.designcrowd.com/designer/553651/designstarla?fbclid=IwAR1LkMm-agaqVIYS_MEOjxZ7J4aaajT_BqZaObgxddyOr9B9b7rNlN3a7bk'>DesignCrowd</a>!</p>
+
+    </section>
+
+    <!-- #endregion -->
+
+    <!-- #region Gallery -->
+
+    <section class="gallery" id="gallery">
+
+        <h2>Galery</h2>
+
+        <div class="grid">
+
+            <div class="option">
+                <img src="./images/galery_home/img_01.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Simple</p>
+                </div>
+
+            </div>
+
+            <div class="option">
+                <img src="./images/galery_home/img_02.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Cards</p>
+                </div>
+
+            </div>
+
+            <div class="option">
+                <img src="./images/galery_home/img_03.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Package</p>
+                </div>
+
+            </div>
+
+            <div class="option">
+                <img src="./images/galery_home/img_04.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Template</p>
+                </div>
+
+            </div>
+           
+            <div class="option">
+                <img src="./images/galery_home/img_05.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Brand</p>
+                </div>
+
+            </div>
+
+            <div class="option">
+                <img src="./images/galery_home/img_06.png" alt="gallery-home-img">
+
+                <div class="title-box">
+                    <p>Logo</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- #endregion -->
+
+    <!-- #region Subscription -->
+
+        <section class="subscription">
+
+            <div>
+                <h2>Newsletter</h2>
+                <p>Subscribe For more HTML CSS and <br> coding tutorials!</p>
+            </div>
+
+            <form class="send" action="">
+
+                <!-- Write Your Email - Example@gmail.com -->
+                <input type="email" placeholder="Write Your Email" required>
+                <input type="submit" value="Submit">
+
+            </form>
+
+        </section>
+
+    <!-- #endregion -->
+
+    <!-- #region Contact -->
+
+    <section class="concat" id="concat">
+
+        <div>
+
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/msg_icon.png" alt="msg_icon"></a></li>
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/ig_icon.png" alt="ig_icon"></a></li>
+            <li><a class="links" href="https://www.instagram.com/designstarla/"><img src="/images/icons/fb_icon.png" alt="fb_icon"></a></li>
+
+            <a class="test1" href="mailto:designstarla@gmail.com">designstarla@gmail.com</a>
+        </div>
+        
+    </section>
+
+    <!-- #endregion -->
+
+    <section>
+
+        <a href="done.html"> TEST </a>
+
+    </section>
+    
+    <script src="/script.js"></script>
+
+    <!-- how dose it work, 99 acc great rting -->
+
+    <!-- tablet responziv, picture optimization, button animations, gallery stranica, services stranica, contact msg, upadte colors, change homee, add source icons/fonts, set finalt varibales -->
+
+</body>
+</html>
