@@ -66,6 +66,8 @@
         section
         {
             margin: 40px;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         @media screen and (max-width: 768px)
@@ -195,10 +197,11 @@
 
         .home
         {
-            background: url("./images/homepage_beta2.png");
+            background: url("./images/test.jpg");
             background-repeat: no-repeat;
             background-position: center left 35%;
             background-size: auto 100%;
+            background-size: cover;
 
             margin-top: 0;
             height: 100vh;
@@ -262,12 +265,14 @@
             margin-left: 35%;
             margin-top: 10px;
             width: 50%;
-            max-width: 724px;            
+            max-width: 724px;  
+            
         }
 
         .uvod .text p
         {
             padding: 8px 6%;
+            max-height: 300px;
         }
 
         /* #region Uvod Mobile */
@@ -1111,11 +1116,17 @@
 
     <!-- #endregion -->
 
+    <section>
+
+        <a href="done.html"> TEST </a>
+
+    </section>
+    
     <script src="/script.js"></script>
 
     <!-- how dose it work, 99 acc great rting -->
 
-    <!-- tablet responziv, picture optimization, animations, gallery stranica, services stranica, contact msg, remove blue selecting, fix zoom scaling, upadte colors, change homee-->
+    <!-- tablet responziv, picture optimization, button animations, gallery stranica, services stranica, contact msg, upadte colors, change homee, add source icons/fonts, set finalt varibales -->
 
 </body>
 </html>
