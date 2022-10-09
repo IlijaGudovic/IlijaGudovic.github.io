@@ -200,7 +200,7 @@
             }
             else
             {
-                if (window.pageYOffset - lastSrc <= 60)
+                if (window.pageYOffset - lastSrc <= 120 || lastSrc - window.pageYOffset <= 120 )
                 {
                     iamges[iamges.length - 1].src = e.src;
                     show.style.display = "block";
