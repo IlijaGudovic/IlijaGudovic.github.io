@@ -171,7 +171,7 @@
         iamges.forEach(img => {
             img.addEventListener('click', function(){onImgClick(img)});
             img.addEventListener('touchstart', function(){tcStart(img)});
-            img.addEventListener('touchend', function(){tcEnd(img)});
+            img.addEventListener('touchcancel', function(){tcEnd(img)});
         });
 
         function onImgClick(e)
@@ -185,6 +185,7 @@
                 iamges[iamges.length - 1].src = e.src;
                 show.style.display = "block";
             }
+
         }
 
         function tcStart(e)
@@ -200,7 +201,7 @@
             }
             else
             {
-                if (window.pageYOffset - lastSrc <= 120 || lastSrc - window.pageYOffset <= 120 )
+                if (Math.abs(window.pageYOffset - lastSrc) <= 100)
                 {
                     iamges[iamges.length - 1].src = e.src;
                     show.style.display = "block";
