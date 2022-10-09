@@ -164,11 +164,14 @@
         var show = document.querySelector('.img-preview');
         show.style.display = "none";
 
+        var lastSrc;
+
         // document.body.addEventListener('click', bdyClick); 
 
         iamges.forEach(img => {
             img.addEventListener('click', function(){onImgClick(img)});
-            img.addEventListener('touchstart', function(){onImgClick(img)});
+            img.addEventListener('touchstart', function(){tcStart(img)});
+            img.addEventListener('touchend', function(){tcEnd(img)});
         });
 
         function onImgClick(e)
@@ -176,7 +179,6 @@
             if (show.style.display == "block")
             {
                 show.style.display = "none";
-                opened = false;
             }
             else
             {
@@ -185,9 +187,25 @@
             }
         }
 
-        function bdyClick()
+        function tcStart(e)
         {
-            
+            lastSrc = window.pageYOffset;
+        }
+
+        function tcEnd(e)
+        {
+            if (show.style.display == "block")
+            {
+                show.style.display = "none";
+            }
+            else
+            {
+                if (window.pageYOffset - lastSrc <= 60)
+                {
+                    iamges[iamges.length - 1].src = e.src;
+                    show.style.display = "block";
+                }
+            }
         }
 
     </script>
