@@ -40,6 +40,13 @@ if(!isMobile())
         servicesIcons[i].addEventListener('click', function(){shake(i + 1)});
         servicesIcons[i].addEventListener('mouseenter', function(){shake(i + 1)});
     }
+
+    var galleryButtons = document.querySelectorAll(".title-box");
+    for (let i = 0; i < links.length; i++)
+    {
+        galleryButtons[i].addEventListener('touchcancel', function(){openGall()});
+    }
+
 }
 else
 {
@@ -96,4 +103,11 @@ function noHistory(e)
 {
      document.location.replace(e.href);
      return false;
+}
+
+
+
+function openGall()
+{
+    location.href = "gallery.html";
 }
